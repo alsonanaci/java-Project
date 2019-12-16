@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+xmlns:h="http://xmlns.jcp.org/jsf/html"  
+xmlns:f="http://xmlns.jcp.org/jsf/core">  
+<h:head>  
+<title>Patient Registration Form</title>  
+<h:outputStylesheet name="/css/bootstrap.min.css"/>  
+</h:head>  
+<h:body>  
+<h:form id="form" class="form-horizontal">  
+<div class="form-group">  
+<div class="col-sm-4"></div>  
+<div  class="col-sm-4">  
+<h2 style="text-align: center">Provide Following Details</h2>  
+</div>  
+</div>  
+<hr/>  
+<div class="form-group">  
+<h:outputLabel for="patiet_id" class="control-label col-sm-4">Patient Id</h:outputLabel>  
+<div class="col-sm-4">  
+<h:inputText id="patiet_id" value="#{patient.patient_id}" class="form-control"   
+validatorMessage="Patient ID is required">  
+<f:validateRequired />  
+</h:inputText>  
+</div>  
+</div>  
+<div class="form-group">  
+<h:outputLabel for="pname" class="control-label col-sm-4">Patient Name</h:outputLabel>  
+<div class="col-sm-4">  
+<h:inputText id="pname" value="#{patient.pname}" class="form-control"   
+validatorMessage="Patient Name is required">  
+<f:validateRequired/>  
+</h:inputText>  
+</div>  
+</div>  
+<div class="form-group">  
+<h:outputLabel for="cel" class="control-label col-sm-4">Patient Cell</h:outputLabel>  
+<div class="col-sm-4">  
+<h:inputText id="cel" value="#{patient.cel}" class="form-control"   
+validatorMessage="Patient Cell is required">  
+<f:validateRequired/>  
+</h:inputText>
+<h:inputText id="email" value="#{patient.email}" class="form-control"   
+validatorMessage="Patient Email is required">  
+<f:validateRequired/>  
+</h:inputText>
+</div>  
+</div>  
+<div class="form-group">  
+<h:outputLabel for="gjinia" class="control-label col-sm-4">Gjinia</h:outputLabel>  
+<div class="col-sm-4">  
+<h:selectOneRadio value="#{patient.gjinia}" validatorMessage="Gjinia is required">  
+<f:selectItem itemValue="M" itemLabel="Male" />  
+<f:selectItem itemValue="F" itemLabel="Female" />  
+<f:validateRequired/>  
+</h:selectOneRadio>  
+</div>  
+</div>  
+<div class="form-group">  
+<h:outputLabel for="adresa" class="control-label col-sm-4">Adresa</h:outputLabel>  
+<div class="col-sm-4">  
+<h:inputTextarea value="#{patient.adresa}" cols="50" rows="5" class="form-control"   
+validatorMessage="Adresa is required">  
+<f:validateRequired/>  
+</h:inputTextarea>  
+</div>  
+</div>  
+<div class="form-group">  
+<h:outputLabel for="diagnoza" class="control-label col-sm-4">Diagnoza</h:outputLabel>  
+<div class="col-sm-4">  
+<h:inputTextarea value="#{patient.diagnoza}" cols="50" rows="5" class="form-control"   
+validatorMessage="Diagnoza is required">  
+<f:validateRequired/>  
+</h:inputTextarea>  
+</div>  
+</div>  
+<div class="form-group">  
+<div class="col-sm-4"></div>  
+<div class="col-sm-4">  
+<div class="col-sm-2">  
+<h:commandButton value="Save" action="#{patient.save()}" class="btn btn-success"   
+style="width: 80px;"></h:commandButton>  
+</div>  
+<div class="col-sm-1">  
+</div>  
+<div class="col-sm-2">  
+<h:link outcome="index" value="View Patients Record List" class="btn btn-primary" />  
+</div>  
+</div>  
+</div>  
+</h:form>  
+</h:body>  
+</html>  

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+xmlns:h="http://xmlns.jcp.org/jsf/html"  
+xmlns:f="http://xmlns.jcp.org/jsf/core">  
+<h:head>  
+<title>Edit Your Record</title>  
+<h:outputStylesheet name="/css/bootstrap.min.css"/>  
+</h:head>  
+<h:body>  
+<h:form id="form" class="form-horizontal">  
+<div class="form-group">  
+<div class="col-sm-2"></div>  
+<h2 style="text-align: center" class="col-sm-4">Edit Your Record</h2>  
+</div>  
+<hr/>  
+<div class="form-group">  
+<h:outputLabel for="patient_id" class="control-label col-sm-2">Patient ID</h:outputLabel>  
+<div class="col-sm-4">  
+<h:inputText id="patient_id" value="#{editPatient.patient_id}" class="form-control"/>  
+</div>  
+</div>  
+<div class="form-group">  
+<h:outputLabel for="pname" class="control-label col-sm-2">Patient Name</h:outputLabel>  
+<div class="col-sm-4">  
+<h:inputText id="pname" value="#{editPatient.pname}" class="form-control"/>  
+</div>  
+</div>  
+<div class="form-group">  
+<h:outputLabel for="cel" class="control-label col-sm-2">Patient Cell</h:outputLabel>  
+<div class="col-sm-4">  
+<h:inputText id="cel" value="#{editPatient.cel}" class="form-control"/>  
+</div>  
+</div> 
+<div class="form-group">  
+<h:outputLabel for="email" class="control-label col-sm-2">Patient Email</h:outputLabel>  
+<div class="col-sm-4">  
+<h:inputText id="email" value="#{editPatient.email}" class="form-control"/>  
+</div>  
+</div>  
+<div class="form-group">  
+<h:outputLabel for="gjinia" class="control-label col-sm-2">Gjinia</h:outputLabel>  
+<div class="col-sm-4">  
+<h:selectOneRadio id = "gjinia" value="#{editPatient.gjinia}">  
+<f:selectItem itemValue="M" itemLabel="Male" />  
+<f:selectItem itemValue="F" itemLabel="Female" />  
+</h:selectOneRadio>  
+</div>  
+</div>  
+<div class="form-group">  
+<h:outputLabel for="adresa" class="control-label col-sm-2">Adresa</h:outputLabel>  
+<div class="col-sm-4">  
+<h:inputTextarea id = "adresa" value="#{editPatient.adresa}" cols="50" rows="5" class="form-control"></h:inputTextarea>
+</div>  
+</div> 
+<div class="form-group">  
+<h:outputLabel for="diagnoza" class="control-label col-sm-2">Diagnoza</h:outputLabel>  
+<div class="col-sm-4">  
+<h:inputTextarea id = "diagnoza" value="#{editPatient.diagnoza}" cols="50" rows="5" class="form-control"> </h:inputTextarea> 
+</div>  
+</div>   
+<div class="form-group">  
+<div class="col-sm-2"></div>  
+<div class="col-sm-4">  
+<center><h:commandButton value="Update" action="#{patient.update(editPatient)}"  
+class="btn btn-primary" style="width: 80px;"></h:commandButton></center>  
+</div>  
+</div>  
+</h:form>  
+</h:body>  
+</html>  
